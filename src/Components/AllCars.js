@@ -1,20 +1,36 @@
 import React, { Component } from 'react';
+import CarTable from './CarTable';
 
 class AllCars extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { cars: null };
+  }
 	
   componentDidMount() {
-    fetch('http://ec2-54-85-254-219.compute-1.amazonaws.com:3000/api/vehicleDetail')
+    fetch('http://ec2-54-85-254-219.compute-1.amazonaws.com:3000/api/queries/getAllVehicleInfo')
     .then(results => {
-      console.log(results);
       return results.json();
     }).then(data => {
-      console.log(data);
+      this.setState({
+        cars: data
+      });
     });
+  }
+
+  renderTable() {
+    if(this.state.cars!=null) {
+      return <CarTable data={this.state.cars} />;      
+    }
   }
 
   render() {
     return(
-      <div></div>
+      <div>
+        <center><h2>All Cars Data</h2></center>
+        {this.renderTable()}
+      </div>
     );
   }
 }
