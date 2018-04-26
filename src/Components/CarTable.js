@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 const styles = theme => ({
   root: {
     width: '100%',
@@ -26,11 +24,9 @@ function CarTable(props) {
     car.vin = data[i].vin;
     cars.push(car);
   }
-  console.log(cars);
 
   return (
     <Paper className={classes.root}>
-      <MuiThemeProvider>
         <Table className={classes.table}>
           <TableHead>
             <TableRow>
@@ -65,7 +61,6 @@ function CarTable(props) {
             })}
           </TableBody>
         </Table>
-      </MuiThemeProvider>
     </Paper>
   );
 }

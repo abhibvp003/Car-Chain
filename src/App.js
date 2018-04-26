@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import AllCars from './Components/AllCars';
+import Container from './Components/Container';
 
 class App extends Component {
 
   render() {
     return (
       <div>
-        <AllCars />
+      	<Container />
       </div>
     );
   }
