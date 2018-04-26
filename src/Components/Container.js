@@ -30,7 +30,7 @@ function Container(props) {
 
   return (
     <div className={classes.root}>
-      <Grid container>
+      <Grid container spacing={16}>
         <Grid item xs={12}>
           <Paper className={classes.paper}><AllCars /></Paper>
         </Grid>
@@ -40,17 +40,14 @@ function Container(props) {
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}><AssignOwnership /></Paper>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        <Grid item xs={6} sm={4}>
+          <Paper className={classes.paper}><h2>Transfer Ownership</h2></Paper>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        <Grid item xs={6} sm={4}>
+          <Paper className={classes.paper}><h2>Insurance Provider</h2></Paper>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        <Grid item xs={6} sm={4}>
+          <Paper className={classes.paper}><h2>Insurance Provider Update</h2></Paper>
         </Grid>
       </Grid>
     </div>
