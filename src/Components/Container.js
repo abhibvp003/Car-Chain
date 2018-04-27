@@ -6,6 +6,7 @@ import Grid from 'material-ui/Grid';
 import AllCars from './AllCars';
 import SingleCar from './SingleCar';
 import AssignOwnership from './AssignOwnership';
+import TransferOwnership from './TransferOwnership';
 
 const styles = theme => ({
   root: {
@@ -41,7 +42,7 @@ function Container(props) {
           <Paper className={classes.paper}><AssignOwnership /></Paper>
         </Grid>
         <Grid item xs={6} sm={4}>
-          <Paper className={classes.paper}><h2>Transfer Ownership</h2></Paper>
+          <Paper className={classes.paper}><TransferOwnership /></Paper>
         </Grid>
         <Grid item xs={6} sm={4}>
           <Paper className={classes.paper}><h2>Insurance Provider</h2></Paper>
