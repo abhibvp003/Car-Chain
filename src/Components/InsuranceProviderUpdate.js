@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, TextField, Button } from 'material-ui'; 
 
-class InsuranceProvider extends Component {
+class InsuranceProviderUpdate extends Component {
 
 	constructor() {
 		super();
@@ -16,7 +16,7 @@ class InsuranceProvider extends Component {
 		var dataToInsert = this.state.insuranceDetails;
 		console.log(dataToInsert);
 		event.preventDefault();
-		fetch(`http://ec2-54-85-254-219.compute-1.amazonaws.com:3000/api/InsuranceProvider`, {
+		fetch(`http://ec2-54-85-254-219.compute-1.amazonaws.com:3000/api/InsuranceProviderUpdate`, {
 			method: 'POST',
 			body: JSON.stringify(dataToInsert),
 			headers: new Headers({
@@ -26,9 +26,9 @@ class InsuranceProvider extends Component {
 		.catch(error => console.error('Error:', error))
 		.then(response => {
 			if(response.transactionId===undefined) {
-				alert('there is some problem adding the insurance or insurance already exist');
+				alert('there is some problem updating the insurance');
 			} else {
-	 			alert('New Insurance Data Added Successfully \n Transaction Id:- ' + response.transactionId);
+	 			alert('New Insurance Data Updated Successfully \n Transaction Id:- ' + response.transactionId);
 			}
 		});
 	}
@@ -87,7 +87,7 @@ class InsuranceProvider extends Component {
 				<Grid item xs={12} sm={12}>
 					<br /><br />
 					<Button variant="raised" color="primary" type="submit">
-						Save New Insurance
+						Update Insurance
 					</Button>
 				</Grid>
 			</Grid>
@@ -99,11 +99,11 @@ class InsuranceProvider extends Component {
 	render() {
 		return(
 			<div>
-				<h2>New Insurance</h2>
+				<h2>Update Insurance Details</h2>
 				{this.ownershipForm()}
 			</div>
 		);
 	}
 }
 
-export default InsuranceProvider;
+export default InsuranceProviderUpdate;

@@ -8,6 +8,7 @@ import SingleCar from './SingleCar';
 import AssignOwnership from './AssignOwnership';
 import TransferOwnership from './TransferOwnership';
 import InsuranceProvider from './InsuranceProvider';
+import InsuranceProviderUpdate from './InsuranceProviderUpdate';
 
 const styles = theme => ({
   root: {
@@ -49,7 +50,7 @@ function Container(props) {
           <Paper className={classes.paper}><InsuranceProvider /></Paper>
         </Grid>
         <Grid item xs={6} sm={4}>
-          <Paper className={classes.paper}><h2>Insurance Provider Update</h2></Paper>
+          <Paper className={classes.paper}><InsuranceProviderUpdate /></Paper>
         </Grid>
       </Grid>
     </div>
